@@ -1,0 +1,169 @@
+   <html>
+     
+     <head>
+     
+        <title>Registration Form</title>
+     
+        <script type="text/javascript">
+            function validate_form() {
+                
+                if (document.stud.fname.value == "") {
+                    alert("Please fill the STUDENT DETAILS");
+                    document.stud.fname.style="border:3px solid red";
+                    document.stud.fname.placeholder="Please enter the FIRST NAME";
+                    return false;
+                }
+                if (document.stud.mname.value == "") {
+                    document.stud.mname.style="border:3px solid red";
+                    document.stud.mname.placeholder="Please enter the MIDDLE NAME";
+                    return false;
+                }
+                if (document.stud.lname.value == "") {
+                    document.stud.lname.style="border:3px solid red";
+                    document.stud.lname.placeholder="Please enter the LAST NAME";
+                    return false;
+                }
+                if(document.stud.address.value=="")
+                {
+                     document.stud.address.style="border:3px solid red";
+                     document.stud.address.placeholder="Please enter the ADDRESS";
+                     return false;
+                }
+                if((document.stud.gender[0].checked==false)&&(document.stud.gender[1].checked==false))
+                {
+                    document.stud.gender[0].focus();
+                    alert("Please select the GENDER");
+                    return false;
+                } 
+                if (document.stud.cname.value == "") 
+                {
+                    document.stud.cname.style="border:3px solid red";
+                    document.stud.cname.placeholder="Please enter the COLLEGE NAME";
+                    return false;
+                }
+                if(document.stud.course.value=="-1")
+                { 
+                    alert("Please select the BRANCH");
+                    document.stud.course.focus();
+                    return false;
+                }   
+                if(document.stud.year.value=="-1")
+                { 
+                    alert("Please select the YEAR");
+                    document.stud.year.focus();
+                    return false;
+                }   
+                if (document.stud.num.value == "")
+                {
+                    document.stud.num.style="border:3px solid red";
+                    document.stud.num.placeholder="Please enter the ROLL NO";
+                    return false;
+                }
+                if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.stud.email_id.value)) 
+                {
+                    alert("You have entered an invalid EMAIL ADDRESS!");
+                    return false;
+                }
+                    
+                if(document.stud.mobno.value=="") 
+                {
+                    document.stud.mobno.style="border:3px solid red";
+                    document.stud.mobno.placeholder="Please enter the MOBILE NUMBER";
+                    return false;
+                }
+             }
+        </script>
+     
+    </head>
+     
+    <body bgcolor="#FFFFFF">
+        <form name="stud" action="welcome.html" onsubmit="return validate_form();" method="post"> 
+             <table align="center" width=30%  height=90% cellspacing="2"  bgcolor="ffa500" cellpadding="2" border='0'>
+                <tr>
+                    <td colspan="2" align="center"><b>Student Registration Form</b></td>
+     
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">Firt Name</td>
+     
+                    <td width="57%"><input type="text" value="" name="fname" size="32"></td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">Middle Name</td>
+     
+                    <td width="57%"><input type="text" value="" name="mname" size="32"></td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">Last Name</td>
+     
+                    <td width="57%"><input type="text" value="" name="lname" size="32"></td>
+                </tr>
+                 <tr>
+                    <td align="left" valign="top" width="41%">Address</td>
+     
+                    <td width="57%"><textarea rows="4" maxlen="200" name="address" value=" " cols="26"></textarea></td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">Gender</td>
+                    <td ><input type="radio" name="gender" value="female" >Female
+                    <input type="radio" name="gender" value="male" >Male</td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">College Name</td>
+     
+                    <td width="57%"><input type="text" value="" name="cname" size="32"></td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">Branch</td>
+                    <td width="57%">
+                     <select type="text" value="" name="course">
+                      <option value="-1">Select Branch</option>
+                      <option value="Computer">Computer Engg</option>
+                      <option value="IT">IT Engg</option>
+                      <option value="Mechanical">Mechanical Engg</option>
+                      <option value="Electrical">Electrical Engg</option>
+                      <option value="Civil">Civil Engg</option>
+                      </select>
+                     </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">Year</td>
+                    <td width="57%">
+                     <select type="text" value="" name="year">
+                      <option value="-1">Select Year</option>
+                      <option value="First Year">First Year</option>
+                      <option value="Second Year">Second Year</option>
+                      <option value="Third Year">Third Year</option>
+                      <option value="Final Year">Final Year</option>
+                     </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" width="41%">Roll No</td>
+                    <td width="57%">
+                        <input type="text" value="" name="num"  size="32"></td>
+                </tr>
+               
+                 <tr>
+                    <td align="left" valign="top" width="41%">Email id</td>
+                    <td width="57%">
+                        <input type="text" value="" name="email_id" size="32"></td>
+                </tr>
+     
+                <td align="left" valign="top" width="41%">Contact Number</td>
+                <td width="57%">
+                    <input type="mobileno" value=""  name="mobno" size="32"></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2"><p align="center">
+                         <input type="submit" value="Submit" name="s1">
+                         <input type="reset" value="  Clear All" name="s2"></td>
+                </tr>
+     
+            </table>
+        </form>
+    </body>
+     
+  </html>
+
