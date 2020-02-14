@@ -65,7 +65,7 @@
                     return false;
                 }
                     
-                if(document.stud.mobno.value=="") 
+                if((document.stud.mobno.pattern.value==false)||(document.stud.mobno.value=="" )) 
                 {
                     document.stud.mobno.style="border:3px solid red";
                     document.stud.mobno.placeholder="Please enter the MOBILE NUMBER";
@@ -152,7 +152,7 @@
      
                 <td align="left" valign="top" width="41%">Contact Number</td>
                 <td width="57%">
-                    <input type="mobileno" value=""  name="mobno" size="32"></td>
+                    <input type="mobileno" value=""  name="mobno" pattern="[7-9]{1}[0-9]{9}" size="32"></td>
                 </tr>
                 
                 <tr>
